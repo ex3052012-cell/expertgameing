@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpertGameing - Premium Gaming Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">EXPERTGAMEING</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToSection('hero')">ExpertGameing</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="scrollToSection('hero')">Home</a></li>
+                <li><a href="#games" class="nav-link" onclick="scrollToSection('games')">Games</a></li>
+                <li><a href="#categories" class="nav-link" onclick="scrollToSection('categories')">Categories</a></li>
+            </ul>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Ultimate Gaming Experience</h1>
+            <p class="hero-subtitle">Discover thousands of free online games. Play the best games for free!</p>
+            <button class="cta-button" onclick="scrollToSection('games')">
+                <i class="fas fa-play"></i>
+                Play Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Categories Section -->
+        <section id="categories" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-tags"></i>
+                Game Categories
+            </h2>
+            <div class="categories" id="categoriesFilter">
+                <div class="category-tag active" data-category="all">All Games</div>
+                <div class="category-tag" data-category="action">Action</div>
+                <div class="category-tag" data-category="adventure">Adventure</div>
+                <div class="category-tag" data-category="racing">Racing</div>
+                <div class="category-tag" data-category="puzzle">Puzzle</div>
+                <div class="category-tag" data-category="multiplayer">Multiplayer</div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-gamepad"></i>
+                Featured Games
+            </h2>
+            <div class="games-grid" id="gamesGrid">
+                <!-- Games will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">
+                    🔥 Popular Games
+                </h3>
+                <ul class="sidebar-list" id="popularGames">
+                    <!-- Popular games populated by JS -->
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">
+                    🆕 New Releases
+                </h3>
+                <ul class="sidebar-list" id="newGames">
+                    <!-- New games populated by JS -->
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">
+                    ⭐ Recommended
+                </h3>
+                <ul class="sidebar-list" id="recommendedGames">
+                    <!-- Recommended games populated by JS -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalGameTitle"></h2>
+                <button class="close-modal" onclick="closeGameModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <iframe class="game-iframe" id="gameIframe"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
